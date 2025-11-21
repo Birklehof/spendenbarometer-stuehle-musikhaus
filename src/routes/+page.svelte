@@ -10,10 +10,11 @@
 	});
 
 	// User sets number of tiles to fill
-	let n = 0;
+	let n = 200;
 
 	chairValueStore.subscribe((value) => {
-		n = value;
+		n = 200;
+		// n = value;
 	});
 
 	const leftRowPattern = [13, 13, 16, 16, 14, 13, 12, 9];

@@ -1,1 +1,3 @@
-<iframe src="http://localhost:5173/" width="670" height="300"></iframe>
+<div class="container">
+<iframe class="responsive-iframe" src="/" width="660" height="310"></iframe>
+</div>

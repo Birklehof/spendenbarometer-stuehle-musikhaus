@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+
+html {
+  @apply w-screen h-screen overflow-hidden;
+  margin: 0;
+}

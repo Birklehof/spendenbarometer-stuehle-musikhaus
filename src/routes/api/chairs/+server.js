@@ -1,4 +1,4 @@
-import { EDGE_CONFIG_ID, EDGE_CONFIG_TOKEN, VERCEL_API_TOKEN } from '$env/static/private'
+import { EDGE_CONFIG_ID, EDGE_CONFIG_TOKEN, VERCEL_API_TOKEN, PRIVATE_PASSPHRASE } from '$env/static/private'
 
 export async function GET() {
     try {
@@ -13,7 +13,11 @@ export async function GET() {
 }
 
 export async function POST({ request }) {
-    const { chairs } = await request.json();
+    const { chairs, passphrase } = await request.json();
+
+    if (passphrase !== PRIVATE_PASSPHRASE) {
+        return new Response("Unauthorized", { status: 401 });
+    }
 
     try {
         const updateEdgeConfig = await fetch(

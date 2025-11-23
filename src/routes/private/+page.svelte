@@ -4,16 +4,22 @@
     import { get } from 'svelte/store';
 
     let inputValue = 0;
+    let passphrase = '';
 
     onMount(async () => {
         await loadValue();
         inputValue = get(chairValueStore);
+        const urlParams = new URLSearchParams(window.location.search);
+        passphrase = urlParams.has('passphrase') ? urlParams.get('passphrase')! : '';
     });
 
     const handleSubmit = async (e: Event) => {
         e.preventDefault();
-        await updateValue(inputValue);
-        alert('Aktualisiert!');
+        await updateValue(inputValue, passphrase).then(() => {
+            alert('Wert erfolgreich aktualisiert!');
+        }).catch(() => {
+            alert('Fehler beim Aktualisieren');
+        });
     };
 </script>
 

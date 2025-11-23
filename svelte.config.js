@@ -15,7 +15,7 @@ const config = {
 			runtime: 'nodejs22.x',
 			images: {
 				sizes: [640, 828, 1200, 1920, 3840],
-				formats: ['image/avif', 'image/webp'],
+				formats: ['image/png', 'image/avif', 'image/webp'],
 				minimumCacheTTL: 300,
 				domains: ['spendenbarometer-stuehle-musikhaus-alpha.vercel.app'],
 			}

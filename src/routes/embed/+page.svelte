@@ -3,7 +3,7 @@
 		<h1 class="text-2xl">Heading</h1>
     <p>Some text above the iframe</p>
 		<div class="container">
-			<iframe class="responsive-iframe" src="/" width="300" height="300"></iframe>
+			<iframe title="Stühlebarometer" class="responsive-iframe" src="/" width="300" height="300"></iframe>
 		</div>
     <p>Some text below the iframe</p>
 	</div>

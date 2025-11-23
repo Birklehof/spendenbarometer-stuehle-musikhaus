@@ -1,17 +1,16 @@
-<script>
+<script lang="ts">
     import { onMount } from 'svelte';
-    import { chairValueStore, loadValue, updateValue } from '$lib/assets/chairs.js';
+    import { chairValueStore, loadValue, updateValue } from '$lib/assets/chairs';
     import { get } from 'svelte/store';
 
-    let inputValue = '';
+    let inputValue = 0;
 
-    // Fetch initial value from server
     onMount(async () => {
         await loadValue();
         inputValue = get(chairValueStore);
     });
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: Event) => {
         e.preventDefault();
         await updateValue(inputValue);
         alert('Aktualisiert!');
@@ -27,6 +26,8 @@
             bind:value={inputValue}
             placeholder="Neuer Wert"
             required
+            min="0"
+            max="220"
             class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 

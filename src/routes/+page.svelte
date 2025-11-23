@@ -3,7 +3,10 @@
 	import { chairValueStore, loadValue } from '$lib/assets/chairs.js';
 
 	let containerWidth = 1510; // original design width
-	let targetWidth = 1000; // actual width you want
+	/**
+	 * @type {number|undefined}
+	 */
+	let targetWidth;
 
 	onMount(() => {
 		loadValue();
@@ -63,12 +66,14 @@
 
 <div
 	bind:clientWidth={targetWidth}
-	style="position: relative; width: 100%; transform-origin: top left; transform: scale({targetWidth / containerWidth});"
+	style="position: relative; width: 100%; transform-origin: top left; visibility: {targetWidth
+		? 'visible'
+		: 'hidden'}; transform: scale({targetWidth ? targetWidth / containerWidth : 1});"
 >
 	<img
 		src="/bg.png"
 		alt="Stage"
-		class="fixed top-0 left-0 max-h-none w-[1510px] max-w-none overflow-hidden"
+		class="fixed top-0 left-0 max-h-none w-[1510px] max-w-none overflow-hidden rounded-md"
 	/>
 
 	<div class="absolute top-[300px] left-[200px] flex h-full flex-col justify-items-start">

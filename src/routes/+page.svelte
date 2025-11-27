@@ -60,7 +60,7 @@
 		: 'hidden'}; transform: scale({targetWidth ? targetWidth / containerWidth : 1});"
 >
 	<img
-		src="/bg.png"
+		src="/bg.jpg"
 		alt="Stage"
 		class="fixed top-0 left-0 max-h-none w-[1510px] max-w-none overflow-hidden rounded-md"
 	/>

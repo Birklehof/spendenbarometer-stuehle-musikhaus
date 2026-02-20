@@ -36,7 +36,7 @@
 		"vite": "^7.1.10"
 	},
 	"dependencies": {
-		"@sveltejs/adapter-vercel": "^6.1.2",
+		"@sveltejs/adapter-vercel": "^6.3.2",
 		"@threlte/core": "^8.3.0",
 		"three": "^0.181.1"
 	}

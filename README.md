@@ -1,38 +1,24 @@
-# sv
+# Birklehof Spendenbarometer
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is a digital donation tracker for new chairs in the Musikhaus of Birklehof.
 
-## Creating a project
+For more details see https://www.birklehof.de/stuehle/.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Development
 
-```sh
-# create a new project in the current directory
-npx sv create
+The site is a basic Svelte app which uses the Vercel Edge API as Backend for the chair count.
 
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+npm run lint -- --fix
 ```
 
-## Building
+## Deployment
 
-To create a production version of your app:
+The page is deployed on Vercel and embedded on the wordpress under https://www.birklehof.de/stuehle/
 
-```sh
-npm run build
+```html
+<!-- #TODO add WP code -->
 ```
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+![Screenshot of the wordpress embed](screenshot.png)

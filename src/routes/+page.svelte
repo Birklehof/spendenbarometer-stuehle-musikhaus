@@ -145,6 +145,6 @@
 	</div>
 
 	<p class="relative top-[720px] left-[1292px] text-black w-fit z-20 text-2xl">
-		&copy; 2025 Paul Maier
+		&copy; 2026 Paul Maier
 	</p>
 </div>

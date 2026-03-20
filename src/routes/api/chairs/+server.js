@@ -12,6 +12,7 @@ export async function GET() {
     }
 }
 
+// @ts-ignore
 export async function POST({ request }) {
     const { chairs, passphrase } = await request.json();
 
@@ -21,7 +22,7 @@ export async function POST({ request }) {
 
     try {
         const updateEdgeConfig = await fetch(
-            'https://api.vercel.com/v1/edge-config/' + EDGE_CONFIG_ID + '/items',
+            'https://api.vercel.com/v1/edge-config/' + EDGE_CONFIG_ID + '/items?teamId=' + process.env.VERCEL_TEAM_ID,
             {
                 method: 'PATCH',
                 headers: {
